@@ -104,6 +104,11 @@ void Splitter_module<T>::end_of_elaboration()
   if( fifo_port.size() == signal_port.size() ) {
     SC_REPORT_FATAL( MSGID, "Exactly one input must be connected" );
   }
+  // Note: In the following, we pass the channel address in twice due
+  // to multiple inheritance. First, to find a pointer to the channel
+  // aspect and second to find a pointer to the interface aspect. They
+  // are distinctly different within the object and upcasting will do
+  // the right thing in this situation.
   fifo_connected = is_connected( this, &fifo, &fifo );
   sig1_connected = is_connected( this, &sig1, &sig1 );
   sig2_connected = is_connected( this, &sig2, &sig2 );
