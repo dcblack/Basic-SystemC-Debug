@@ -1,13 +1,16 @@
 <!-- For doxygen -->
 \mainpage
 
-About `Tracing`
-===================
+About Basic SystemC Debugging
+=============================
 
-This is a simple SystemC design illustrating features related to incorporating waveform tracing into your simulations.
+This is a simple SystemC design illustrating features related to incorporating reporting and waveform tracing into your simulations. Simulations complete with a simple PASSED/FAILED indicator.
 
 Features
 --------
+
+The following are features demonstrated in this code.
+
 - An extended reporting mechanism to simplify `SC_REPORT_*`. See report.hpp
 - Use of command-line arguments to specify tracing and debugging. See commandline.hpp and top.cpp:23
 - Adding tracing of signals from within each module. See top.cpp:52 and stimulus.cpp:23
@@ -15,6 +18,16 @@ Features
 - UVM-like objections controls when to stop. See objection.hpp.
 - `sc_main` detects lack of `sc_stop()` and corrects. See main.cpp:51
 - `sc_main` displays statistics and success/failure before exiting. See main.cpp:57
+- Use of tlm_fifo<T> to capture data
+- Determining if an export is connected. See splitter.hpp:65 is_connected() function.
+- Modern C++ features: Uniform initialization, class inline static variables, ranged-for, auto, raw-strings, user-define literals
+  
+Non-features
+------------
+
+The following are not supported in this project.
+
+- TLM-2.0
 
 Requirements
 ------------
