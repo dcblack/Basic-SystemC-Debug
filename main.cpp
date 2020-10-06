@@ -26,14 +26,16 @@ int sc_main( [[maybe_unused]]int argc, [[maybe_unused]]char* argv[] )
 Run-time options:
 -----------------
 
-| Option          | Description                                 |
-| :-------------- | :------------------------------------------ |
-| -help           | Displays this text and exits                |
-| -debug          | Increases verbosity to debug level (noisy)  |
-| -debug=INSTANCE | Debug messages for instances named INSTANCE |
-| -debugall       | Debug messages for all instances            |
-| -quiet          | Decreases verbosity lowest level            |
-| -trace          | Enables output of waveform data to dump.vcd |
+| Option          | Description                                  |
+| :-------------- | :------------------------------------------- |
+| -help           | Displays this text and exits                 |
+| -debug          | Increases verbosity to debug level (noisy)   |
+| -debug=INSTANCE | Debug messages for instances named INSTANCE  |
+| -debugall       | Debug messages for all instances             |
+| -inject=PERCENT | Inject errors at a range of PERCENT (1..100) |
+| -n=SAMPLE_SIZE  | Number of samples to generate (default 10)   |
+| -quiet          | Decreases verbosity lowest level             |
+| -trace          | Enables output of waveform data to dump.vcd  |
 
 Note: If multiple verbosities are specified, the last one wins.
 

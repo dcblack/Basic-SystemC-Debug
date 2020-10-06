@@ -5,7 +5,7 @@
 
 struct Commandline
 {
-  // Return true if a command-line argument beginning with opt exists
+  // Return index if a command-line argument beginning with opt exists; otherwise, zero
   inline static size_t has_opt( std::string opt )
   {
     for( int i = 1; i < sc_core::sc_argc(); ++i ) {
